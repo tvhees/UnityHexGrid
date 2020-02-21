@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 
-public class Tile : MonoBehaviour {
+public class HexTile : MonoBehaviour {
 	public CubeIndex index;
 
 	public static Vector3 Corner(Vector3 origin, float radius, int corner, HexOrientation orientation){
@@ -116,8 +116,8 @@ public class Tile : MonoBehaviour {
 		return c;
 	}
 
-	public static Tile operator+ (Tile one, Tile two){
-		Tile ret = new Tile();
+	public static HexTile operator+ (HexTile one, HexTile two){
+		HexTile ret = new HexTile();
 		ret.index = one.index + two.index;
 		return ret;
 	}
@@ -164,7 +164,7 @@ public class Tile : MonoBehaviour {
 	public int GCost { get; set; }
 	public int HCost { get; set; }
 	public int FCost { get { return GCost + HCost; } }
-	public Tile Parent { get; set; }
+	public HexTile Parent { get; set; }
 	#endregion
 }
 

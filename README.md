@@ -8,19 +8,19 @@ In unity Assets > Import Package > Custom Package
 
 Navigate to downloaded file and select it
 
-Create an empty gameObject `ctrl+shift+n` and add `Grid` script to it
+Create an empty gameObject `ctrl+shift+n` and add `HexGrid` script to it
 
 ## Generating a Grid in edit mode
 Click Generate Grid in the inspector ensuring that relevant settings are selected
 
 ## Generating a Grid at runtime
-Ensure relevant settings are set and call `GenerateGrid()` on an instance of Grid
+Ensure relevant settings are set and call `GenerateGrid()` on an instance of HexGrid
 
 ```cs
 public Material hexMaterial; //Assigned in inspector
 public Material lineMaterial; //Assigned in inspector
 
-private Grid grid;
+private HexGrid grid;
 
 private void Start() {
 	//Set grid settings
@@ -41,10 +41,10 @@ private void Start() {
 
 ## Access tiles at runtime
 
-Call `Tiles` on an instance of Grid, returns a `Dictionary<string, Tile>` where the string is constructed from the tile's coordinates.
+Call `Tiles` on an instance of HexGrid, returns a `Dictionary<string, Tile>` where the string is constructed from the tile's coordinates.
 
 ```cs
-private Grid grid;
+private HexGrid grid;
 
 private void Start() {
 	var tiles = grid.Tiles;
